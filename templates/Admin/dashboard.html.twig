@@ -9,6 +9,13 @@
 
 
     {# FIXME: Lister les utilisateurs et afficher un lien de suppression #}
+<ul>
+    {% for u in user %}
+        <a href="">{{ u.firstname }} {{ u.lastname }} - {{ u.email }}</a>
+        <a href="">delete</a>
+    {% endfor %}
+</ul>
+
 
     <ul>
         <li>

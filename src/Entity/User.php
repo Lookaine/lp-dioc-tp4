@@ -62,82 +62,82 @@ class User implements UserInterface, \Serializable
         $this->createdAt = $this->updatedAt = new \DateTime();
     }
 
-    public function getId() : ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getEmail() : ?string
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmail(?string $email) : void
+    public function setEmail($email)
     {
         $this->email = $email;
     }
 
-    public function getFirstname() : ?string
+    public function getFirstname()
     {
         return $this->firstname;
     }
 
-    public function setFirstname(?string $firstname) : void
+    public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
     }
 
-    public function getLastname() : ?string
+    public function getLastname()
     {
         return $this->lastname;
     }
 
-    public function setLastname(?string $lastname) : void
+    public function setLastname($lastname)
     {
         $this->lastname = $lastname;
     }
 
-    public function getBirthday() : ?\DateTime
+    public function getBirthday()
     {
         return $this->birthday;
     }
 
-    public function setBirthday(\DateTime $birthday) : void
+    public function setBirthday($birthday)
     {
         $this->birthday = $birthday;
     }
 
-    public function getPassword() : ?string
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPassword(?string $password) : void
+    public function setPassword($password)
     {
         $this->password = $password;
     }
 
-    public function getCreatedAt() : \DateTime
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
 
-    public function getUpdatedAt() : \DateTime
+    public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTime $updatedAt) : void
+    public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
     }
 
-    public function isAdmin() : bool
+    public function isAdmin()
     {
         return $this->isAdmin;
     }
 
-    public function setIsAdmin(bool $isAdmin) : void
+    public function setIsAdmin($isAdmin)
     {
         $this->isAdmin = $isAdmin;
     }
@@ -161,6 +161,7 @@ class User implements UserInterface, \Serializable
      */
     public function getSalt()
     {
+        return;
     }
 
     /**
@@ -176,6 +177,7 @@ class User implements UserInterface, \Serializable
      */
     public function eraseCredentials()
     {
+        return;
     }
 
     /**
@@ -183,14 +185,14 @@ class User implements UserInterface, \Serializable
      */
     public function serialize()
     {
-        return serialize([
+        return serialize(array(
             $this->id,
             $this->email,
             $this->firstname,
             $this->lastname,
             $this->isAdmin,
             $this->password,
-        ]);
+        ));
     }
 
     /**
@@ -198,12 +200,13 @@ class User implements UserInterface, \Serializable
      */
     public function unserialize($serialized)
     {
-        list(
+        list (
             $this->id,
             $this->email,
             $this->firstname,
             $this->lastname,
             $this->isAdmin,
-            $this->password) = unserialize($serialized);
+            $this->password,
+        ) = unserialize($serialized);
     }
 }
